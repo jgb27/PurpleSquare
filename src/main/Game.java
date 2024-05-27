@@ -12,7 +12,7 @@ public class Game extends Canvas implements Runnable {
     public Game() {
         new Windows(800, 600, "Purple Square", this);
         run();
-    }
+    } 
 
     @Override
     public void run() {
@@ -20,8 +20,6 @@ public class Game extends Canvas implements Runnable {
         thread = new Thread(this);
         thread.start();
     }
-
-    
 
     public static void main(String[] args) {
         new Game();
