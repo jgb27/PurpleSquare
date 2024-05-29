@@ -1,6 +1,7 @@
 package entities;
 
 import abstracts.GameObject;
+import enums.ID;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -8,8 +9,8 @@ import java.awt.Rectangle;
 
 public class Player extends GameObject {
 
-  public Player(int x, int y) {
-    super(x, y);
+  public Player(int x, int y, ID id) {
+    super(x, y, id);
   }
 
   @Override
@@ -17,9 +18,6 @@ public class Player extends GameObject {
   }
 
   public void render(Graphics g) {
-    // purple square
-    g.setColor(Color.MAGENTA.darker());
-    g.fillRect(this.x, this.y, 32, 32);
   }
 
   public Rectangle getBounds() {

@@ -6,6 +6,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
 import entities.Player;
+import enums.ID;
 
 public class Game extends Canvas implements Runnable {
 
@@ -16,6 +17,7 @@ public class Game extends Canvas implements Runnable {
     Thread thread; // A Thread Serve para rodar o jogo em paralelo com o resto do código
     Handler handler; // Variável para gerenciar os objetos do jogo
 
+    // Constantes
     final int WIDTH = 1366; // Largura da janela
     final int HEIGHT = 768; // Altura da janela
 
@@ -25,8 +27,7 @@ public class Game extends Canvas implements Runnable {
         start(); // Inicia o jogo
 
         handler = new Handler(); // Inicializa o handler
-
-        handler.addObject(new Player(100, 100)); // Adiciona um jogador ao jogo
+        this.addKeyListener(new KeyInput(handler)); // Adiciona o KeyInput ao jogo
     }
 
     // start

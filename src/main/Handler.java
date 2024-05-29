@@ -11,7 +11,10 @@ import abstracts.GameObject;
  */
 
 public class Handler {
+  
   LinkedList<GameObject> object = new LinkedList<GameObject>();
+
+  private boolean up = false, down = false, right = false, left = false;
 
   // Método tick() percorre a lista de objetos e chama o método tick() de cada
   // objeto.
@@ -40,5 +43,38 @@ public class Handler {
 
   public void removeObject(GameObject object) {
     this.object.remove(object);
+  }
+
+  // Getters e Setters
+  public boolean isUp() {
+    return up;
+  }
+
+  public void setUp(boolean up) {
+    this.up = up;
+  }
+
+  public boolean isDown() {
+    return down;
+  }
+
+  public void setDown(boolean down) {
+    this.down = down;
+  }
+
+  public boolean isRight() {
+    return right;
+  }
+
+  public void setRight(boolean right) {
+    this.right = right;
+  }
+
+  public boolean isLeft() {
+    return left;
+  }
+
+  public void setLeft(boolean left) {
+    this.left = left;
   }
 }

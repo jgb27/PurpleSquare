@@ -3,6 +3,8 @@ package abstracts;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
+import enums.ID;
+
 /**
  * Criamos a classe abstrata GameObject que será a base para todos os objetos do
  * jogo.
@@ -11,19 +13,24 @@ import java.awt.Rectangle;
 
 public abstract class GameObject {
 
+  // atributos
   protected int x, y;
   protected float velX = 0, velY = 0;
-
-  public GameObject(int x, int y) {
+  protected ID id; // identificador do objeto no jogo
+  
+  // construtor
+  public GameObject(int x, int y, ID id) {
     this.x = x;
     this.y = y;
+    this.id = id;
   }
 
-  public abstract void tick();
+  // métodos abstratos 
+  public abstract void tick(); // responsavel por atualizar o objeto
 
-  public abstract void render(Graphics g);
+  public abstract void render(Graphics g); // responsavel por renderizar o objeto
 
-  public abstract Rectangle getBounds();
+  public abstract Rectangle getBounds(); // responsavel por retornar o retangulo de colisão
 
   // getters and setters
 
@@ -57,5 +64,13 @@ public abstract class GameObject {
 
   public void setVelY(float velY) {
     this.velY = velY;
+  }
+
+  public ID getId() {
+    return id;
+  }
+
+  public void setId(ID id) {
+    this.id = id;
   }
 }
